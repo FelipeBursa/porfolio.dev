@@ -3,8 +3,13 @@ import GitHub from "./icons/GitHub.astro"
 import NextJS from "./icons/NextJS.astro"
 import Tailwind from "./icons/Tailwind.astro"
 import Link from "./icons/Link.astro"
+import FastApi from "./icons/Fast.astro"
 import LinkButton from "./LinkButton.astro"
-
+import Flutter from "./icons/Flutter.astro"
+import Firebase from "./icons/Firebase.astro"
+import MongoDb from "./icons/MongoDb.astro"
+import Flask from "./icons/Flask.astro"
+import MySQL from "./icons/MySQL.astro"
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -16,78 +21,146 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  FLUTTER: {
+    name: "Flutter",
+    class: "bg-[#003159] text-white",
+    icon: Flutter,
+  },
+  FIREBASE: {
+    name: "Firebase",
+    class: "bg-[#003159] text-white",
+    icon: Firebase,
+  },
+  FASTAPI: {
+    name: "FastApi",
+    class: "bg-[#003159] text-white",
+    icon: FastApi,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-[#003159] text-white",
+    icon: MongoDb,
+  },
+  FLASK: {
+    name: "Flask",
+    class: "bg-[#003159] text-white",
+    icon: Flask,
+  },
+  GITHUB: {
+    name: "GitHub",
+    class: "bg-[#003159] text-white",
+    icon: GitHub,
+  },
+  MYSQL: {
+    name: "MySQL",
+    class: "bg-[#003159] text-white",
+    icon: MySQL,
+  },
+
+
 }
 const PROJECTS = [
-  {
-    title: "SVGL - A beautiful library with SVG logos",
+{   title: "DataBase Administrator",
+
+    company: "Caja de jubilaciones de Córdoba - [CIDS]",
+      date: "2020 – 2023",
+
     description:
-      "Biblioteca de logos SVG de las marcas más populares. +10k visitas al mes. +2K svgs descargados. Creado desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://svgl.vercel.app/",
-    github: "https://github.com/pheralb/svgl",
-    image: "/projects/svgl.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Lider de de area de base de datos, en el proyecto de modernización de la caja de jubilaciones de Córdoba, utilizando tecnologías como Oracle, PL/SQL, Java, Angular, y más.",
+    links: [
+      { url: "https://www.caja.cba.gov.ar/", text: "Saber más" },
+    ],
+    github: "https://github.com/pheralb/caja-jubilaciones",
+    image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
+    tags: [TAGS.MYSQL,TAGS.GITHUB],
   },
   {
-    title: "AdventJS - Retos de programación con JavaScript y TypeScript",
+    title: "DataBase Administrator",
+    date: "2020 – 2023",
+
+    company: "Formulario único de postulantes (FUP) - [CIDS]",
     description:
-      "Plataforma gratuita con retos de programación. Más de 1 millón de visitas en un mes. +50K retos completados. Creada desde cero con Next.js, React y Tailwind CSS.",
-    link: "https://adventjs.dev",
-    image: "/projects/adventjs.webp",
-    tags: [TAGS.NEXT, TAGS.TAILWIND],
+      "Lider de de area de base de datos, en el proyecto de modernización de la caja de jubilaciones de Córdoba, utilizando tecnologías como Oracle, PL/SQL, Java, Angular, y más.",
+    links: [
+      { url: "https://www.fup.cba.gov.ar/", text: "Saber más" },
+    ],
+    image: "public/FUP-LOGO.png",
+    tags: [TAGS.MYSQL,TAGS.GITHUB],
+  },
+  {
+    title: "DataBase Administrator",
+    company: "Tribunal De cuentas - [CIDS]",
+    date: "2020 – 2023",
+
+    description:
+      "Lider de de area de base de datos, en el proyecto de modernización de la caja de jubilaciones de Córdoba, utilizando tecnologías como Oracle, PL/SQL, Java, Angular, y más.",
+    links: [
+      { url: "https://www.tribunaldecuentas.cba.gov.ar/", text: "Saber más" },
+    ],
+    image: "public/TDCCUENTAS.PNG",
+    tags: [TAGS.MYSQL,TAGS.GITHUB],
+  },
+  {
+    title: "FullStack Developer",
+    company: "Bircle.ia",
+    date: "2023 - Now",
+
+    description:
+      "As a Web Developer at Bircle.ia, I am involved in various projects utilizing technologies like Next.js, React, FastAPI, artificial intelligence (Llama index),DynamoDb , Chroma Db, integration with WhatsApp Api, and more.",
+    links: [
+      { url: "https://www.bircle.ia/", text: "Saber más" },
+    ],
+    image: "public/bircleAi.svg",
+    tags: [TAGS.NEXT, TAGS.TAILWIND,TAGS.FASTAPI,TAGS.FIREBASE,TAGS.MONGODB,TAGS.GITHUB],
   },
 ]
 ---
 
-<div class="flex flex-col gap-y-16">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
   {
-    PROJECTS.map(({ image, title, description, tags, link, github }) => (
-    <article class="flex flex-col space-x-0 space-y-8 group md:flex-row md:space-x-8 md:space-y-0">
-  <div class="w-full md:w-1/2">
-    <div class="relative flex flex-col items-center col-span-6 row-span-5 gap-8 transition duration-500 ease-in-out transform shadow-xl overflow-clip rounded-xl sm:rounded-xl md:group-hover:-translate-y-1 md:group-hover:shadow-2xl lg:border lg:border-gray-800 lg:hover:border-gray-700 lg:hover:bg-gray-800/50">
-      <img alt="Recién llegado vs 5 años en Nueva Zelanda" class="object-cover object-top w-full h-56 transition duration-500 sm:h-full md:scale-110 md:group-hover:scale-105" loading="lazy" src={image} />
-    </div>
-  </div>
-
-  <div class="w-full md:w-1/2 md:max-w-lg">
-    <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-      {title}
-    </h3>
-    <div class="flex flex-wrap mt-2">
-      <ul class="flex flex-row mb-2 gap-x-2">
-          {tags.map((tag) => (
-            <li>
-              <span
-                class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
-              >
-                <tag.icon class="size-4" />
-                {tag.name}
-              </span>
-            </li>
-          ))}
-        </ul>
-
-      <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
-      <footer class="flex items-end justify-start mt-4 gap-x-4">
-          {github && (
-            <LinkButton href={github}>
-              <GitHub class="size-6" />
-              Code
-              
-            </LinkButton>
-          )}
-          {link && (
-            <LinkButton href={link}>
-              <Link class="size-4" />
-              Preview
-            </LinkButton>
-          )}
-        </footer>
-    </div>
-  </div>
-</article>
+    PROJECTS.map(({ image, title, description, tags, links, github, company, date }) => (
+    <article class="flex flex-col space-x-0 space-y-8 group">
+      <div class="w-full">
+        <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out">
+          <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+            {title}
+          </h3>
+          <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-300">
+            {company}
+          </h4>
+          <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">{date}</time>
+          <div class="flex flex-wrap mt-2">
+            <ul class="flex flex-wrap mb-2 gap-x-2">
+              {tags.map((tag) => (
+                <li>
+                  <span
+                    class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                  >
+                    <tag.icon class="size-4" />
+                    {tag.name}
+                  </span>
+                </li>
+              ))}
+            </ul>
+            <div class="mt-2 text-gray-700 dark:text-gray-400">{description}</div>
+            <footer class="flex items-end justify-start mt-4 gap-x-4">
+              {github && (
+                <LinkButton href={github}>
+                  <GitHub class="size-6" />
+                  Code
+                </LinkButton>
+              )}
+              {links && links.map(link => (
+                <LinkButton href={link.url}>
+                  <Link class="size-4" />
+                  {link.text}
+                </LinkButton>
+              ))}
+            </footer>
+          </div>
+        </div>
+      </div>
+    </article>
     ))
   }
 </div>
-
-
-

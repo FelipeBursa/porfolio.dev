@@ -1,0 +1,44 @@
+---
+import GitHub from "./icons/GitHub.astro"
+import NextJS from "./icons/NextJS.astro"
+import Tailwind from "./icons/Tailwind.astro"
+import Flutter from "./icons/Flutter.astro"
+import Firebase from "./icons/Firebase.astro"
+import MongoDb from "./icons/MongoDb.astro"
+import Flask from "./icons/Flask.astro"
+
+const TAGS = [
+    {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    {
+        name: "Flutter",
+        class: "bg-[#003159] text-white",
+        icon: Flutter,
+    },
+    {
+        name: "Firebase",
+        class: "bg-[#003159] text-white",
+        icon: Firebase,
+    },
+    {
+        name: "MongoDB",
+        class: "bg-[#003159] text-white",
+        icon: MongoDb,
+    },
+    {
+        name: "Flask",
+        class: "bg-[#003159] text-white",
+        icon: Flask,
+    },
+]
+---
+
+<Tags tags={TAGS} />

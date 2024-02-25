@@ -1,0 +1,111 @@
+---
+import GitHub from "./icons/GitHub.astro";
+import NextJS from "./icons/NextJS.astro";
+import Tailwind from "./icons/Tailwind.astro";
+import Link from "./icons/Link.astro";
+import FastApi from "./icons/Fast.astro";
+import LinkButton from "./LinkButton.astro";
+import Flutter from "./icons/Flutter.astro";
+import Firebase from "./icons/Firebase.astro";
+import MongoDb from "./icons/MongoDb.astro";
+import Flask from "./icons/Flask.astro";
+import MySQL from "./icons/MySQL.astro";
+const TAGS = {
+    NEXT: {
+        name: "Next.js",
+        class: "bg-black text-white",
+        icon: NextJS,
+    },
+    TAILWIND: {
+        name: "Tailwind CSS",
+        class: "bg-[#003159] text-white",
+        icon: Tailwind,
+    },
+    FLUTTER: {
+        name: "Flutter",
+        class: "bg-[#003159] text-white",
+        icon: Flutter,
+    },
+    FIREBASE: {
+        name: "Firebase",
+        class: "bg-[#003159] text-white",
+        icon: Firebase,
+    },
+    FASTAPI: {
+        name: "FastApi",
+        class: "bg-[#003159] text-white",
+        icon: FastApi,
+    },
+    MONGODB: {
+        name: "MongoDB",
+        class: "bg-[#003159] text-white",
+        icon: MongoDb,
+    },
+    FLASK: {
+        name: "Flask",
+        class: "bg-[#003159] text-white",
+        icon: Flask,
+    },
+    GITHUB: {
+        name: "GitHub",
+        class: "bg-[#003159] text-white",
+        icon: GitHub,
+    },
+    MYSQL: {
+        name: "MySQL",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+};
+const STACK = [
+    {
+        title: "FrontEnd",
+        tags: [TAGS.FLUTTER, TAGS.NEXT, TAGS.TAILWIND],
+    },
+    {
+        title: "BackEnd",
+        tags: [
+            TAGS.FASTAPI,
+            TAGS.MYSQL,
+            TAGS.FLASK,
+            TAGS.FIREBASE,
+            TAGS.MONGODB,
+        ],
+    },
+    {
+        title: "Productivity",
+        tags: [TAGS.GITHUB, TAGS.FIREBASE, TAGS.MONGODB],
+    },
+];
+---
+
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    {
+        STACK.map(({ title, tags }) => (
+            <article class="flex flex-col space-x-0 space-y-8 group">
+                <div class="w-full">
+                    <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
+
+                        <div class="flex flex-wrap mt-2">
+                            <ul class="flex flex-wrap mb-2 gap-x-2">
+                                {tags.map((tag) => (
+                                    <li>
+                                        <span
+                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                        >
+                                            <tag.icon class="size-4" />
+                                            {tag.name}
+                                        </span>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </article>
+        ))
+    }
+</div>
