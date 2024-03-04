@@ -2,15 +2,20 @@
 import GitHub from "./icons/GitHub.astro";
 import NextJS from "./icons/NextJS.astro";
 import Tailwind from "./icons/Tailwind.astro";
-import Link from "./icons/Link.astro";
 import FastApi from "./icons/Fast.astro";
-import LinkButton from "./LinkButton.astro";
 import Flutter from "./icons/Flutter.astro";
 import Firebase from "./icons/Firebase.astro";
 import MongoDb from "./icons/MongoDb.astro";
 import Flask from "./icons/Flask.astro";
 import MySQL from "./icons/MySQL.astro";
+import CSharp from "./icons/Csharp.astro";
+
 const TAGS = {
+    CSHARP: {
+        name: "C#",
+        class: "bg-black text-white",
+        icon: CSharp,
+    },
     NEXT: {
         name: "Next.js",
         class: "bg-black text-white",
@@ -51,35 +56,100 @@ const TAGS = {
         class: "bg-[#003159] text-white",
         icon: GitHub,
     },
+    LLAMAINDEX: {
+        name: "LLama Index",
+        class: "bg-[#003159] text-white",
+        icon: GitHub,
+    },
+    OPENAI: {
+        name: "Open Ai",
+        class: "bg-[#003159] text-white",
+        icon: GitHub,
+    },
     MYSQL: {
         name: "MySQL",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    NOTION: {
+        name: "Notion",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    TFS: {
+        name: "TFS",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    G_SUITE: {
+        name: "Google Suite",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    AWS: {
+        name: "AWS",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    CHROMADB: {
+        name: "ChromaDB",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    DYNAMODB: {
+        name: "DynamoDB",
+        class: "bg-[#003159] text-white",
+        icon: MySQL,
+    },
+    PLSQL: {
+        name: "PL/SQL",
         class: "bg-[#003159] text-white",
         icon: MySQL,
     },
 };
 const STACK = [
     {
-        title: "FrontEnd",
-        tags: [TAGS.FLUTTER, TAGS.NEXT, TAGS.TAILWIND],
+        title: "FrontEnd 💻",
+        tags: [TAGS.FLUTTER, TAGS.NEXT, TAGS.TAILWIND, TAGS.CSHARP],
     },
     {
-        title: "BackEnd",
+        title: "BackEnd ⚙️",
         tags: [
             TAGS.FASTAPI,
+            TAGS.PLSQL,
             TAGS.MYSQL,
+            TAGS.AWS,
+            TAGS.CSHARP,
             TAGS.FLASK,
             TAGS.FIREBASE,
             TAGS.MONGODB,
+            TAGS.DYNAMODB,
+            TAGS.CHROMADB,
         ],
     },
     {
-        title: "Productivity",
-        tags: [TAGS.GITHUB, TAGS.FIREBASE, TAGS.MONGODB],
+        title: "Artificial Intelligence 🤖",
+        tags: [TAGS.LLAMAINDEX, TAGS.OPENAI],
     },
+    {
+        title: "Productivity 📊",
+        tags: [TAGS.GITHUB, TAGS.NOTION, TAGS.TFS, TAGS.G_SUITE],
+    },
+];
+
+const TAG_COLORS = [
+    "bg-blue-500",
+    "bg-green-500",
+    "bg-yellow-500",
+    "bg-indigo-500",
+    "bg-purple-500",
+    "bg-pink-500",
+    "bg-red-500",
+    "bg-gray-500",
 ];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-flow-row-dense grid-cols-1 md:grid-cols-2 gap-6">
     {
         STACK.map(({ title, tags }) => (
             <article class="flex flex-col space-x-0 space-y-8 group">
@@ -90,11 +160,15 @@ const STACK = [
                         </h3>
 
                         <div class="flex flex-wrap mt-2">
-                            <ul class="flex flex-wrap mb-2 gap-x-2">
-                                {tags.map((tag) => (
+                            <ul class="flex flex-wrap mb-2 gap-x-2 gap-y-2">
+                                {tags.map((tag, index) => (
                                     <li>
                                         <span
-                                            class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                                            class={`flex gap-x-2 rounded-full text-xs ${
+                                                TAG_COLORS[
+                                                    index % TAG_COLORS.length
+                                                ]
+                                            } text-white py-1 px-2`}
                                         >
                                             <tag.icon class="size-4" />
                                             {tag.name}

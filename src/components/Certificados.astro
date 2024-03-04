@@ -59,80 +59,74 @@ const TAGS = {
 };
 const CERTIFICATES = [
     {
-        title: "First Certificate in English",
+        title: "FCE  B2 🇬🇧",
+        company: "Cambridge University",
         date: " 2017",
-        links: [{ url: "https://www.caja.cba.gov.ar/", text: "Saber más" }],
+        links: [
+            {
+                url: "https://photos.app.goo.gl/ZqyKhtzGKX32heXP7/",
+                text: "",
+            },
+        ],
+    },
+    {
+        title: "Power BI 📊",
+
+        company: "Kinetic Training",
+        date: "2022",
+        links: [
+            {
+                url: "https://www.linkedin.com/posts/felipe-bursa_kineticbursafelipe-activity-6959868917842354177-OxQg?utm_source=share&utm_medium=member_desktop",
+                text: "",
+            },
+        ],
+
         image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
     },
     {
-        title: "Power BI",
+        title: "Micro Strategy 📊",
 
-        company: "Personal",
-        date: "2023",
-
-        image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
+        company: "CIDS",
+        date: "2021",
     },
     {
-        title: "Micro Strategy",
+        title: "Dactylography ⌨️",
 
-        company: "Personal",
-        date: "2023",
-
-        links: [{ url: "https://www.caja.cba.gov.ar/", text: "Saber más" }],
-        image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
+        company: "Colegio Gabriel Taborin.",
+        date: "2016",
     },
 ];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-6">
     {
-        CERTIFICATES.map(
-            ({
-                image,
-                title,
-                description,
-                tags,
-                links,
-                github,
-                company,
-                date,
-            }): any => (
-                <article class="flex flex-col space-x-0 space-y-8 group">
-                    <div class="w-full">
-                        <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out">
-                            <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
-                                {title}
-                            </h3>
-                            <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-300">
-                                {company}
-                            </h4>
-                            <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">
-                                {date}
-                            </time>
-                            <div class="flex flex-wrap mt-2">
-                                <div class="mt-2 text-gray-700 dark:text-gray-400">
-                                    {description}
-                                </div>
-                                <footer class="flex items-end justify-start mt-4 gap-x-4">
-                                    {github && (
-                                        <LinkButton href={github}>
-                                            <GitHub class="size-6" />
-                                            Code
+        CERTIFICATES.map(({ image, title, links, company, date }): any => (
+            <article class="flex flex-col space-x-0 space-y-8 group">
+                <div class="w-full">
+                    <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out">
+                        <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
+                            {title}
+                        </h3>
+                        <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-300">
+                            {company}
+                        </h4>
+                        <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">
+                            {date}
+                        </time>
+                        <div class="flex flex-wrap mt-2">
+                            <footer class="flex items-end justify-start mt-4 gap-x-4">
+                                {links &&
+                                    links.map((link) => (
+                                        <LinkButton href={link.url}>
+                                            <Link class="size-4" />
+                                            {link.text}
                                         </LinkButton>
-                                    )}
-                                    {links &&
-                                        links.map((link) => (
-                                            <LinkButton href={link.url}>
-                                                <Link class="size-4" />
-                                                {link.text}
-                                            </LinkButton>
-                                        ))}
-                                </footer>
-                            </div>
+                                    ))}
+                            </footer>
                         </div>
                     </div>
-                </article>
-            ),
-        )
+                </div>
+            </article>
+        ))
     }
 </div>

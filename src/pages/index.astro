@@ -16,17 +16,15 @@ import Hero from "@/components/Hero.astro";
   title="Porfolio de Felipe Bursa - Desarrollador y Programador Web con 4 años de experiencia"
   description="Contrata a Felipe Bursa para crear tu aplicación web o móvil. Desarrollador Web y Creador de Contenido. Especializado en crear aplicaciones únicas."
 >
-  <main class="px-6">
-    <SectionContainer class="py-16 md:py-36">
-      <Hero />
-    </SectionContainer>
-  </main>
+  <SectionContainer class="py-8 md:py-18">
+    <Hero />
+  </SectionContainer>
 
   <SectionContainer id="Experiencia" class="mt-16">
     <h2
       class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
     >
-      <ProfileCheck class="size-7" />
+      <Briefcase class="size-7" />
       Experiencia Laboral
     </h2>
     <Projects />
@@ -42,24 +40,29 @@ import Hero from "@/components/Hero.astro";
     <Experience />
   </SectionContainer>
 
-  <SectionContainer id="Certificados" class="mt-16">
-    <h2
-      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-    >
-      <CodeIcon class="size-7" />
-      Certificados
-    </h2>
-    <Certificates />
-  </SectionContainer>
+  <SectionContainer
+    id="Certificados-Tecnologias"
+    class="mt-16 flex flex-wrap md:flex-nowrap gap-8"
+  >
+    <div class="w-full md:w-1/2">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <Briefcase class="size-7" />
+        Tecnologías
+      </h2>
+      <Stack />
+    </div>
 
-  <SectionContainer id="Tecnologias" class="mt-16">
-    <h2
-      class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
-    >
-      <CodeIcon class="size-7" />
-      Tecnologías
-    </h2>
-    <Stack />
+    <div class="w-full md:w-1/2">
+      <h2
+        class="flex items-center mb-6 text-3xl font-semibold gap-x-3 text-black/80 dark:text-white"
+      >
+        <ProfileCheck class="size-7" />
+        Certificados
+      </h2>
+      <Certificates />
+    </div>
   </SectionContainer>
 
   <SectionContainer id="sobre-mi" class="mt-16">

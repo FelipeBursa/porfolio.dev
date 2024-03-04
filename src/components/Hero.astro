@@ -1,60 +1,42 @@
 ---
-const personalImageAlt = "Felipe Bursa"
-import Badge from "@/components/Badge.astro"
-import LinkedInIcon from "@/components/icons/LinkedIn.astro"
-import MailIcon from "@/components/icons/Mail.astro"
-import SocialPill from "@/components/SocialPill.astro"
+const personalImageAlt = "Felipe Bursa";
+import LinkedInIcon from "@/components/icons/LinkedIn.astro";
+import MailIcon from "@/components/icons/Mail.astro";
+import SocialPill from "@/components/SocialPill.astro";
 ---
 
-<style>
-  .wave-hand:hover {
-    animation: wave 3s infinite;
-  }
-
-  @keyframes wave {
-    0% { transform: rotate(0deg); }
-    10% { transform: rotate(14deg); }
-    20% { transform: rotate(-8deg); }
-    30% { transform: rotate(14deg); }
-    40% { transform: rotate(-4deg); }
-    50% { transform: rotate(10deg); }
-    60% { transform: rotate(0deg); }
-    100% { transform: rotate(0deg); }
-  }
-</style>
-
-<div class="max-w-xl">
-  
-  <div class="flex gap-4">
-    <img
-      class="rounded-full shadow-lg size-32"
-      src="/me.jpeg"
-      alt={personalImageAlt}
-    />
-    <div>
-      <h1
-        class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+<div class="flex gap-2 w-full">
+  <img
+    class="rounded-full shadow-lg size-48 animate-moveUpDown gap x-8"
+    src="/me.jpeg"
+    alt={personalImageAlt}
+  />
+  <div class="flex-grow">
+    <h1
+      class="text-4xl font-bold tracking-tight text-gray-800 sm:text-5xl dark:text-white"
+    >
+      Hola, soy Felipe Bursa <span class="wave-hand">👋</span>
+    </h1>
+    <p
+      class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
+    >
+      +4 años de experiencia en una amplia variedad de proyectos y roles. <strong
       >
-        Hola, soy Felipe Bursa <span class="wave-hand">👋</span>
-      </h1>
-      <p
-        class="mt-6 text-xl text-gray-800 dark:[&>strong]:text-yellow-200 [&>strong]:text-yellow-500 [&>strong]:font-semibold dark:text-gray-300"
-      >
-        +4 años de experiencia. <strong
-          >Estudiante avanzado de Ingenieria en sistemas en UTN FRC </strong
-        > de Cordoba, Argentina 🇦🇷. 
-      </p>
-      <nav class="flex flex-wrap gap-4 mt-8">
-        <SocialPill href="mailto:felipebursa@gmail.com">
-          <MailIcon class="size-4" />
-          Contáctame
-        </SocialPill>
-        <SocialPill href="https://linkedin.com/in/felipe-bursa">
-          <LinkedInIcon class="size-4" />
-          LinkedIn
-        </SocialPill>
-        
-      </nav>
-    </div>
+        Estudiante avanzado de Ingenieria en sistemas en UTN FRC
+      </strong> de Cordoba, Argentina 🇦🇷.
+    </p>
+    <nav class="flex flex-wrap gap-4 mt-8">
+      <SocialPill href="mailto:felipebursa@gmail.com">
+        <MailIcon class="size-4" />
+        Contáctame
+      </SocialPill>
+      <SocialPill href="https://linkedin.com/in/felipe-bursa">
+        <LinkedInIcon class="size-4" />
+        LinkedIn
+      </SocialPill>
+    </nav>
+  </div>
+  <div class="w-1/3">
+    <img class="w-full h-auto" src="/public/Asunto.png" alt="Asunto" />
   </div>
 </div>

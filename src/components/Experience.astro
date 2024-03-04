@@ -10,11 +10,17 @@ import Firebase from "./icons/Firebase.astro";
 import MongoDb from "./icons/MongoDb.astro";
 import Flask from "./icons/Flask.astro";
 import MySQL from "./icons/MySQL.astro";
+import CSharp from "./icons/Csharp.astro";
 const TAGS = {
   NEXT: {
     name: "Next.js",
     class: "bg-black text-white",
     icon: NextJS,
+  },
+  CSHARP: {
+    name: "C#",
+    class: "bg-black text-white",
+    icon: CSharp,
   },
   TAILWIND: {
     name: "Tailwind CSS",
@@ -57,37 +63,65 @@ const TAGS = {
     icon: MySQL,
   },
 };
+
+const TAG_COLORS = [
+  "bg-blue-500",
+  "bg-green-500",
+  "bg-yellow-500",
+  "bg-indigo-500",
+  "bg-purple-500",
+  "bg-pink-500",
+  "bg-red-500",
+  "bg-gray-500",
+];
+
 const PROJECTS = [
   {
-    title: "Desarollador Fullstack Mobile",
+    title: "Desarollador Fullstack Mobile 📱",
 
     company: "JoinMe",
     date: " 2023",
 
     description:
-      "Lider de de area de base de datos, en el proyecto de modernización de la caja de jubilaciones de Córdoba, utilizando tecnologías como Oracle, PL/SQL, Java, Angular, y más.",
-    links: [{ url: "https://www.caja.cba.gov.ar/", text: "Saber más" }],
-    github: "https://github.com/pheralb/caja-jubilaciones",
+      "Red social para conectar a personas con intereses en común, con el objetivo de realizar actividades juntos. La aplicación fue desarrollada con Flutter y Firebase.",
+    links: [
+      {
+        url: "https://www.linkedin.com/posts/felipe-bursa_joinme-proyectofinal-utnfrc-activity-7155756058169204736-EHYm?utm_source=share&utm_medium=member_desktop",
+        text: "",
+      },
+    ],
+    github: "https://github.com/FelipeBursa/FrontJoinMe",
     image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
     tags: [TAGS.FLUTTER, TAGS.GITHUB, TAGS.FIREBASE, TAGS.MONGODB],
   },
   {
-    title: "ChatBot entrenado con un archivo de texto",
+    title: "ChatBot entrenado con un archivo de texto 💬 🤖",
 
     company: "Personal",
     date: "2023",
 
     description:
       "Simple chat con un bot entrenado con un archivo de texto, utilizando de tecnologia Llama index para entrenar el modelo y con la api de chat gpt .",
-    links: [{ url: "https://www.caja.cba.gov.ar/", text: "Saber más" }],
-    github: "https://github.com/pheralb/caja-jubilaciones",
+    links: [{ url: "https://www.caja.cba.gov.ar/", text: "" }],
+    github: "https://github.com/FelipeBursa/ChatPruebaBircle",
     image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
     tags: [TAGS.NEXT],
+  },
+  {
+    title: "Proyecto de Diseño de Software - Patrón Strategy ⚙️",
+
+    company: "Universidad",
+    date: "2021",
+
+    description:
+      "Este es un proyecto universitario en el que aplicamos conceptos básicos de diseño de software, con un enfoque especial en el patrón de diseño Strategy.",
+    github: "https://github.com/FelipeBursa/PPAIDSI_3Entrega",
+    tags: [TAGS.CSHARP, TAGS.GITHUB],
   },
 ];
 ---
 
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
   {
     PROJECTS.map(
       ({ image, title, description, tags, links, github, company, date }) => (
@@ -104,11 +138,13 @@ const PROJECTS = [
                 {date}
               </time>
               <div class="flex flex-wrap mt-2">
-                <ul class="flex flex-wrap mb-2 gap-x-2">
-                  {tags.map((tag) => (
+                <ul class="flex flex-wrap mb-2 gap-x-2 gap-y-2">
+                  {tags.map((tag, index) => (
                     <li>
                       <span
-                        class={`flex gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2 `}
+                        class={`flex gap-x-2 rounded-full text-xs ${
+                          TAG_COLORS[index % TAG_COLORS.length]
+                        } text-white py-1 px-2`}
                       >
                         <tag.icon class="size-4" />
                         {tag.name}
