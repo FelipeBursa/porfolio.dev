@@ -27,6 +27,11 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: Tailwind,
   },
+  LLAMAINDEX: {
+    name: "LLama Index",
+    class: "bg-[#003159] text-white",
+    icon: GitHub,
+  },
   FLUTTER: {
     name: "Flutter",
     class: "bg-[#003159] text-white",
@@ -77,13 +82,13 @@ const TAG_COLORS = [
 
 const PROJECTS = [
   {
-    title: "Desarollador Fullstack Mobile 📱",
+    title: "Fullstack Mobile Developer 📱",
 
     company: "JoinMe",
-    date: " 2023",
+    date: "2023",
 
     description:
-      "Red social para conectar a personas con intereses en común, con el objetivo de realizar actividades juntos. La aplicación fue desarrollada con Flutter y Firebase.",
+      "Social network to connect people with common interests, with the aim of doing activities together. The application was developed with Flutter and Firebase.",
     links: [
       {
         url: "https://www.linkedin.com/posts/felipe-bursa_joinme-proyectofinal-utnfrc-activity-7155756058169204736-EHYm?utm_source=share&utm_medium=member_desktop",
@@ -91,30 +96,30 @@ const PROJECTS = [
       },
     ],
     github: "https://github.com/FelipeBursa/FrontJoinMe",
-    image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
+    image: "public/logo_caja.png", // The image has been changed here
     tags: [TAGS.FLUTTER, TAGS.GITHUB, TAGS.FIREBASE, TAGS.MONGODB],
   },
   {
-    title: "ChatBot entrenado con un archivo de texto 💬 🤖",
+    title: "ChatBot trained with a text file (PDF) 💬 🤖",
 
     company: "Personal",
     date: "2023",
 
     description:
-      "Simple chat con un bot entrenado con un archivo de texto, utilizando de tecnologia Llama index para entrenar el modelo y con la api de chat gpt .",
+      "Simple chat with a bot trained with a text file, using Llama index technology to train the model and with the gpt chat api.",
     links: [{ url: "https://www.caja.cba.gov.ar/", text: "" }],
     github: "https://github.com/FelipeBursa/ChatPruebaBircle",
-    image: "public/logo_caja.png", // Aquí se ha cambiado la imagen
-    tags: [TAGS.NEXT],
+    image: "public/logo_caja.png", // The image has been changed here
+    tags: [TAGS.NEXT, TAGS.LLAMAINDEX, TAGS.GITHUB],
   },
   {
-    title: "Proyecto de Diseño de Software - Patrón Strategy ⚙️",
+    title: "Software Design Project - Strategy Pattern ⚙️",
 
-    company: "Universidad",
+    company: "University",
     date: "2021",
 
     description:
-      "Este es un proyecto universitario en el que aplicamos conceptos básicos de diseño de software, con un enfoque especial en el patrón de diseño Strategy.",
+      "This is a university project in which we applied basic software design concepts, with a special focus on the Strategy design pattern.",
     github: "https://github.com/FelipeBursa/PPAIDSI_3Entrega",
     tags: [TAGS.CSHARP, TAGS.GITHUB],
   },
@@ -134,6 +139,7 @@ const PROJECTS = [
               <h4 class="text-xl font-semibold text-blue-600 dark:text-blue-300">
                 {company}
               </h4>
+
               <time class="p-0 m-0 text-sm text-gray-600/80 dark:text-white/80">
                 {date}
               </time>
