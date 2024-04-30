@@ -10,6 +10,13 @@ import Firebase from "./icons/Firebase.astro";
 import MongoDb from "./icons/MongoDb.astro";
 import Flask from "./icons/Flask.astro";
 import MySQL from "./icons/MySQL.astro";
+import Whatsapp from "./icons/whatsapp.astro";
+import dynamo from "./icons/dynamo.astro";
+import llama from "./icons/llamaindex.astro";
+import chroma from "./icons/chroma.astro";
+
+import node from "./icons/nodejs.astro";
+
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -44,7 +51,7 @@ const TAGS = {
   DYNAMODB: {
     name: "DynamoDb",
     class: "bg-[#003159] text-white",
-    icon: MongoDb,
+    icon: dynamo,
   },
   FLASK: {
     name: "Flask",
@@ -64,22 +71,22 @@ const TAGS = {
   NODEJS: {
     name: "NodeJs",
     class: "bg-[#003159] text-white",
-    icon: MySQL,
+    icon: node,
   },
   CHROMA: {
     name: "ChromaDb",
     class: "bg-[#003159] text-white",
-    icon: MySQL,
+    icon: chroma,
   },
   WHATSAPP: {
     name: "Whatsapp Api",
     class: "bg-[#003159] text-white",
-    icon: MySQL,
+    icon: Whatsapp,
   },
   LLAMAINDEX: {
     name: "Llama Index",
     class: "bg-[#003159] text-white",
-    icon: MySQL,
+    icon: llama,
   },
   
 };
@@ -137,9 +144,9 @@ const PROJECTS = [
   {
     PROJECTS.map(
       ({ image, title, description, tags, links, company, date }, index) => (
-        <article class="flex flex-col space-x-0 space-y-8 group">
+        <article class="flex flex-col space-x-0 space-y-8 group flex-grow">
           <div class="w-full">
-            <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out">
+            <div class="border border-transparent hover:border-gray-300 rounded-lg bg-white dark:bg-gray-800 p-6 transition duration-300 ease-in-out h-full">
               <h3 class="text-2xl font-bold text-gray-800 dark:text-gray-100">
                 {title}
               </h3>

@@ -11,6 +11,8 @@ import MongoDb from "./icons/MongoDb.astro";
 import Flask from "./icons/Flask.astro";
 import MySQL from "./icons/MySQL.astro";
 import CSharp from "./icons/Csharp.astro";
+import react from "./icons/react.astro";
+
 const TAGS = {
   NEXT: {
     name: "Next.js",
@@ -67,6 +69,11 @@ const TAGS = {
     class: "bg-[#003159] text-white",
     icon: MySQL,
   },
+  REACT: {
+    name: "React",
+    class: "bg-[#003159] text-white",
+    icon: react,
+  },
 };
 
 const TAG_COLORS = [
@@ -109,7 +116,7 @@ const PROJECTS = [
       "Simple chat with a bot trained with a text file, using Llama index technology to train the model and with the gpt chat api.",
     github: "https://github.com/FelipeBursa/ChatBotPDF",
     image: "public/logo_caja.png", // The image has been changed here
-    tags: [TAGS.NEXT, TAGS.LLAMAINDEX, TAGS.GITHUB],
+    tags: [TAGS.REACT, TAGS.LLAMAINDEX, TAGS.GITHUB],
   },
   {
     title: "Software Design Project - Strategy Pattern ⚙️",
